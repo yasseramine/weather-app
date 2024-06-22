@@ -1,0 +1,22 @@
+@use 'themes' as *;
+@use 'variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: Quicksand, sans-serif;
+  font-size: 16px;
+}
+
+.App-dark,
+.App-light {
+  background-color: var(--main-bg-color);
+  color: var(--primary-text);
+
+  overflow: hidden;
+}
