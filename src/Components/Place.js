@@ -5,7 +5,7 @@ export default function Place() {
   const { place } = useContext(WeatherContext);
 
   return (
-    <div className='place'>
+    <div className='Place'>
       <i className='bi bi-geo-alt-fill'></i>
       <b>{place.name}</b>, {place.country}
     </div>

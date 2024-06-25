@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import HorizontalDraggable from './HorizontalDraggable';
 import DayWidget from '../Components/DayWidget';
 import HourWidget from '../Components/HourWidget';
-import '../styles/Forecast.scss';
+import '../styles/components/Forecast.scss';
 
 function Forecast({ type, title, data }) {
   const ref = useRef();

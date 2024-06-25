@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import ThemeContext from '../context/theme.context';
-import '../styles/Settings.scss';
+import '../styles/components/Settings.scss';
 import { MEASUREMENT_SYSTEMS, THEME_KEY } from '../utils';
 import WeatherContext from '../context/weather.context';
 

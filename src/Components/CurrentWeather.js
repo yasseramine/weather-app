@@ -1,7 +1,7 @@
 import WeatherIcon from './WeatherIcon';
-import '../styles/CurrentWeather.scss';
 import { useContext } from 'react';
 import WeatherContext from '../context/weather.context';
+import '../styles/components/CurrentWeather.scss';
 
 function CurrentWeather() {
   const { currentWeather, units } = useContext(WeatherContext);
@@ -55,11 +55,15 @@ function CurrentWeather() {
     <div className='CurrentWeather'>
       <div className='temperature'>
         <div className='weather-icon'>
-          <WeatherIcon iconNumber={currentWeather.icon_num} />
+          <WeatherIcon
+            iconNumber={currentWeather.icon_num}
+            alt={currentWeather.summary}
+          />
         </div>
         <div className='value'>
           <div className='real'>
-            {Math.round(currentWeather.temperature)} {units.temperature}
+            {Math.round(currentWeather.temperature)}{' '}
+            {units.temperature}
           </div>
           <div className='feels-like'>
             <small>

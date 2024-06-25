@@ -5,7 +5,14 @@ import WeatherIcon from './WeatherIcon';
 export default function DayWidget({ data }) {
   const { units } = useContext(WeatherContext);
 
-  let { day, icon, temperature_max, temperature_min, precipitation } = data;
+  let {
+    day,
+    icon,
+    summary,
+    temperature_max,
+    temperature_min,
+    precipitation,
+  } = data;
 
   // Weather date
   const locale = navigator.language;
@@ -20,7 +27,7 @@ export default function DayWidget({ data }) {
     <div className='widget'>
       <div className='day'>{day}</div>
       <div className='icon-temp'>
-        <WeatherIcon iconNumber={icon} />
+        <WeatherIcon iconNumber={icon} alt={summary} />
         <div className='temperature'>
           <div className='max'>
             <b>
@@ -33,8 +40,8 @@ export default function DayWidget({ data }) {
         </div>
       </div>
       <div className='precipitation'>
-        <i className='bi bi-droplet'></i> {Math.round(precipitation.total)}{' '}
-        {units.precipitation}
+        <i className='bi bi-droplet'></i>{' '}
+        {Math.round(precipitation.total)} {units.precipitation}
       </div>
     </div>
   );

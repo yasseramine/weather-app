@@ -1,7 +1,7 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import WeatherContext from '../context/weather.context';
 import { searchPlaces } from '../api';
-import '../styles/Search.scss';
+import '../styles/components/Search.scss';
 
 function Search() {
   const [text, setText] = useState('');
@@ -11,7 +11,11 @@ function Search() {
 
   function onSearch(e) {
     setText(e.target.value);
-    searchPlaces(e.target.value, setSearchResults, setShowSearchResults);
+    searchPlaces(
+      e.target.value,
+      setSearchResults,
+      setShowSearchResults
+    );
   }
 
   function selectPlace(place) {

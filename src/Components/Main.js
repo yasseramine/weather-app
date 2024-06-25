@@ -2,10 +2,11 @@ import { useContext } from 'react';
 import CurrentWeather from './CurrentWeather';
 import WeatherContext from '../context/weather.context';
 import Forecast from './Forecast';
-import '../styles/Main.scss';
+import '../styles/components/Main.scss';
 
 function Main() {
-  const { loading, dailyForecast, hourlyForecast } = useContext(WeatherContext);
+  const { loading, dailyForecast, hourlyForecast } =
+    useContext(WeatherContext);
 
   return (
     <div className='Main'>

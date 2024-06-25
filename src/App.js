@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import Header from './Components/Header';
 import Main from './Components/Main';
 import ThemeContext from './context/theme.context';
-import './styles/App.scss';
+import './styles/components/App.scss';
 
 function App() {
   const { dark } = useContext(ThemeContext);

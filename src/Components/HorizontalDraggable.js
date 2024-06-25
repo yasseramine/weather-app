@@ -26,10 +26,22 @@ function HorizontalDraggable({ parent_ref, children }) {
 
   useEffect(() => {
     parent_ref.current.addEventListener('mousemove', move, false);
-    parent_ref.current.addEventListener('mousedown', startDragging, false);
-    parent_ref.current.addEventListener('mouseup', stopDragging, false);
-    parent_ref.current.addEventListener('mouseleave', stopDragging, false);
-  }, []);
+    parent_ref.current.addEventListener(
+      'mousedown',
+      startDragging,
+      false
+    );
+    parent_ref.current.addEventListener(
+      'mouseup',
+      stopDragging,
+      false
+    );
+    parent_ref.current.addEventListener(
+      'mouseleave',
+      stopDragging,
+      false
+    );
+  });
   return <div>{children}</div>;
 }
 

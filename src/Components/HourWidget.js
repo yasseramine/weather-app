@@ -4,7 +4,14 @@ import WeatherContext from '../context/weather.context';
 
 export default function HourWidget({ data }) {
   const { units } = useContext(WeatherContext);
-  const { date, icon: iconNumber, temperature, wind, precipitation } = data;
+  const {
+    date,
+    icon: iconNumber,
+    summary,
+    temperature,
+    wind,
+    precipitation,
+  } = data;
 
   // Weather date
   const locale = navigator.language;
@@ -42,15 +49,15 @@ export default function HourWidget({ data }) {
       <div className='hour'>{hour}</div>
       <div className='icon-temp'>
         <div className='icon'>
-          <WeatherIcon iconNumber={iconNumber} />
+          <WeatherIcon iconNumber={iconNumber} alt={summary} />
         </div>
         <div className='temperature'>
           {Math.round(temperature)} {units.temperature}
         </div>
       </div>
       <div className='precipitation'>
-        <i className='bi bi-droplet'></i> {Math.round(precipitation.total)}{' '}
-        {units.precipitation}
+        <i className='bi bi-droplet'></i>{' '}
+        {Math.round(precipitation.total)} {units.precipitation}
       </div>
       <div className='wind'>
         <div className='speed'>
